@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "wrangler dev --test-scheduled",
     "test": "vitest run",
-    "configure": "wrangler config",
-    "deploy": "wrangler publish"
+    "wrangler": "wrangler"
   },
   "author": "",
   "license": "ISC",

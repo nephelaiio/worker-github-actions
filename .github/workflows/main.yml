@@ -22,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Configure Cloudflare API Token
-        run: npm run configure -- secret.gh_token ${{ secrets.GH_TOKEN }}
+      - name: Deploy Cloudflare Worker
+        run: npm run deploy -- --var GITHUB_APPLY:true
 
       - name: Deploy Cloudflare Worker
-        run: npm run deploy
+        run: echo ${{ secrets.GH_TOKEN }} | npm run wrangler -- secret put GITHUB_TOKEN
