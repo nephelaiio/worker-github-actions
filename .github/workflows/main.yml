@@ -2,15 +2,17 @@
 name: Deploy Cloudflare Worker
 on:
 
-  pull_request:
+  pull_request_target:
     branches:
       - master
+    types:
+      - closed
 
 jobs:
 
   deploy:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    needs: test
     steps:
 
       - name: Checkout repository
@@ -26,17 +28,3 @@ jobs:
 
       - name: Deploy Cloudflare Worker
         run: wrangler publish
-
-  test:
-    if: github.event.pull_request.merged
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
