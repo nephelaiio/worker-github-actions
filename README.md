@@ -10,13 +10,12 @@ To install and deploy the Worker Github Actions project, follow these steps:
 1. Clone the repository: `git clone git@github.com:nephelaiio/worker-github-actions.git`
 2. Install dependencies: `npm install`
 3. Create a [Cloudflare API token](https://developers.cloudflare.com/api) with the `Workers Scripts` permission.
-4. Create a `.env` file in the root of the project with the following environment variables:
-   ```
-   ACCOUNT_ID=<Cloudflare account ID>
-   ZONE_ID=<Cloudflare zone ID>
-   GH_TOKEN=<Github API token>
-   ```
-   Replace `<Cloudflare account ID>` with your Cloudflare account ID, `<Cloudflare zone ID>` with the zone ID of the domain where you want to deploy the worker, and `<Github API token>` with a Github API token that has access to the organization's repositories.
+4. Configure [Cloudflare API token](https://developers.cloudflare.com/api) for deployment
+
+``` sh
+   npm run configure -- secret.gh_token <Cloudflare API token>
+```
+
 5. Deploy the worker: `npm run deploy`
 
 ## Usage

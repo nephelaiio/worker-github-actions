@@ -1,5 +1,6 @@
 ---
 name: Deploy Cloudflare Worker
+
 on:
 
   pull_request_target:
@@ -18,13 +19,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Wrangler CLI
-        uses: cloudflare/wrangler-action@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
-          version: latest
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Configure Cloudflare API Token
-        run: wrangler config secret.gh_token ${{ secrets.GH_TOKEN }}
+        run: npm run configure -- secret.gh_token ${{ secrets.GH_TOKEN }}
 
       - name: Deploy Cloudflare Worker
-        run: wrangler publish
+        run: npm run deploy
