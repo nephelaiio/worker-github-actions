@@ -6,6 +6,7 @@ import repos from './repos.json';
 import repoWorkflows from './workflows.metricbeat.json';
 import workflow4669422 from './workflows.4669422.json';
 import workflow4669423 from './workflows.4669423.json';
+import repo193786081 from './repo.193786081.json';
 
 export const restHandlers = [
 
@@ -30,6 +31,9 @@ export const restHandlers = [
     }),
     rest.put('https://api.github.com/repos/nephelaiio/ansible-role-metricbeat/actions/workflows/4669423/enable', (req, res, ctx) => {
         return res(ctx.status(200), ctx.json({}));
+    }),
+    rest.get('https://api.github.com/repos/nephelaiio/ansible-role-metricbeat', (req, res, ctx) => {
+        return res(ctx.status(200), ctx.json(repo193786081));
     }),
 
 ]

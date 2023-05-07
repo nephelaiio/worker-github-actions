@@ -5,8 +5,8 @@ const token = process.env.GITHUB_TOKEN || 'any';
 
 describe("githubAPI", () => {
 	it("should retrieve a repo", async () => {
-		const repo = await githubAPI(token, 'nephelaiio/ansible-role-metricbeat')
-		expect(repo).toHaveProperty('state', 'active')
+		const repo = await githubAPI(token, 'repos/nephelaiio/ansible-role-metricbeat');
+		expect(repo).toHaveProperty('name', 'ansible-role-metricbeat');
 	});
 });
 
