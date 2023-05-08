@@ -1,4 +1,5 @@
 # Worker Github Actions
+
 [![Test](https://github.com/nephelaiio/worker-github-actions/actions/workflows/test.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/test.yml) [![Deploy](https://github.com/nephelaiio/worker-github-actions/actions/workflows/main.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/main.yml)
 
 Worker Github Actions is a Cloudflare Worker that periodically enables Github Actions for all repositories in a given organization. This project uses the [Github REST API v3](https://docs.github.com/en/rest) to access Github repository information and the [Cloudflare Workers API](https://developers.cloudflare.com/workers) to automate the Github Actions workflow.
@@ -12,7 +13,7 @@ To install and deploy the Worker Github Actions project, follow these steps:
 3. Create a [Cloudflare API token](https://developers.cloudflare.com/api) with the `Workers Scripts` permission.
 4. Configure [Cloudflare API token](https://developers.cloudflare.com/api) for deployment
 
-``` sh
+```sh
    npm run configure -- secret.gh_token <Cloudflare API token>
 ```
 

@@ -92,9 +92,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -207,9 +205,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -322,9 +318,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -437,9 +431,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -552,9 +544,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-      "ansible"
-    ],
+    "topics": ["ansible"],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -667,9 +657,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -782,9 +770,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -897,9 +883,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
@@ -1012,9 +996,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -1127,9 +1109,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -1242,9 +1222,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 9,
     "open_issues": 3,
@@ -1357,9 +1335,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 1,
@@ -1472,9 +1448,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -1587,9 +1561,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -1696,9 +1668,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -1811,9 +1781,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -1926,9 +1894,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -2041,9 +2007,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 3,
     "open_issues": 1,
@@ -2156,9 +2120,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -2271,9 +2233,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
@@ -2386,9 +2346,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 1,
     "open_issues": 0,
@@ -2501,9 +2459,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 3,
     "open_issues": 0,
@@ -2616,9 +2572,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
@@ -2725,9 +2679,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -2840,9 +2792,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 1,
@@ -2955,9 +2905,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 3,
     "open_issues": 0,
@@ -3064,9 +3012,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 0,
     "open_issues": 0,
@@ -3179,9 +3125,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 2,
     "open_issues": 0,
@@ -3294,9 +3238,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 5,
     "open_issues": 0,
@@ -3409,9 +3351,7 @@
     "allow_forking": true,
     "is_template": false,
     "web_commit_signoff_required": false,
-    "topics": [
-
-    ],
+    "topics": [],
     "visibility": "public",
     "forks": 4,
     "open_issues": 1,
