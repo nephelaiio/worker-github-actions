@@ -193,7 +193,7 @@ async function main() {
             if (isVerbose) logger.settings.minLevel = LOG_LEVELS.debug;
             if (isQuiet) logger.settings.minLevel = LOG_LEVELS.fatal;
             if (isInsecure) process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-            logger.info(`Validating deployment parameters`);
+            logger.debug(`Validating deployment parameters`);
             checks.push(checkEnvironment());
         });
 
@@ -250,15 +250,21 @@ async function main() {
     program.command('delete').action((_) => {
         const { repository, environment } = program.opts();
         checks.push(checkRepository(repository, environment, 'clean'));
-        Promise.all(checks).then(() => {
+        Promise.all(checks).then(async () => {
             const worker = workerName(project, `${branch}`);
             if (worker != project) {
-                const workers = listWorkers(
+                const request = await listWorkers(
                     `${CLOUDFLARE_API_TOKEN}`,
                     `${CLOUDFLARE_ACCOUNT_ID}`
                 );
-                logger.info(`Deleting worker ${worker}`);
-                run(`wrangler delete ${worker}`);
+                const workers = request.result;
+                const matchWorkers = workers.filter((w: any) => w.id == worker);
+                if (matchWorkers.length > 0) {
+                    logger.info(`Deleting worker ${worker}`);
+                    run(`wrangler delete --name ${worker}`);
+                } else {
+                    logger.debug(`Worker ${worker} not found`);
+                }
             }
         });
     });
