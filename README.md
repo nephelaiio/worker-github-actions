@@ -1,14 +1,11 @@
-# Worker Github Actions
+# Worker Deploy
 
-[![Test](https://github.com/nephelaiio/worker-github-actions/actions/workflows/test.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/test.yml)
-[![Deploy](https://github.com/nephelaiio/worker-github-actions/actions/workflows/main.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/main.yml)
+[![Test](https://github.com/nephelaiio/worker-deploy/actions/workflows/test.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/test.yml)
+[![Deploy](https://github.com/nephelaiio/worker-deploy/actions/workflows/publish.yml/badge.svg)](https://github.com/nephelaiio/worker-github-actions/actions/workflows/main.yml)
 
-Worker Github Actions is a Cloudflare Worker that periodically enables Github
-Actions for all repositories in a given organization. This project uses the
-[Github REST API v3](https://docs.github.com/en/rest) to access Github
-repository information and the
+Worker deploy Actions is an NPM package that uses
 [Cloudflare Workers API](https://developers.cloudflare.com/workers) to automate
-the Github Actions workflow.
+Cloudflare Worker and Secret deployments
 
 ## Installation
 

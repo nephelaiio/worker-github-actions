@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { listRepos } from './github';
-
 export interface Env {
     GITHUB_TOKEN: string;
     GITHUB_APPLY: boolean;

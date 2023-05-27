@@ -1,6 +1,5 @@
 import { Command } from 'commander';
 import { execSync } from 'child_process';
-import { Octokit } from 'octokit';
 
 import git from 'isomorphic-git';
 
@@ -12,8 +11,6 @@ import { listWorkers } from './cloudflare.ts';
 
 const CLOUDFLARE_ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || null;
 const CLOUDFLARE_API_TOKEN = process.env.CLOUDFLARE_API_TOKEN || null;
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || null;
-
 const cwd = process.cwd();
 
 if (fs.existsSync(`${cwd}/.env`)) {
@@ -69,10 +66,6 @@ async function deploy(
 }
 
 async function checkEnvironment() {
-    if (!GITHUB_TOKEN) {
-        logger.fatal('GITHUB_TOKEN environment variable is not set');
-        process.exit(1);
-    }
     if (!CLOUDFLARE_API_TOKEN) {
         logger.fatal('CLOUDFLARE_API_TOKEN environment variable is not set');
         process.exit(1);
@@ -81,46 +74,6 @@ async function checkEnvironment() {
         logger.fatal('CLOUDFLARE_ACCOUNT_ID environment variable is not set');
         process.exit(1);
     }
-}
-
-async function checkRepository(
-    repository: string,
-    branch: string,
-    operation: string
-) {
-    logger.debug('Validating source repository settings');
-    const octokit = new Octokit({ auth: GITHUB_TOKEN });
-
-    try {
-        const repo = await octokit.request(`GET /repos/${repository}`);
-        if (!repo) {
-            logger.fatal(`Repository '${repository}' not found`);
-            process.exit(1);
-        }
-        try {
-            if (operation == 'deploy') {
-                const originBranch = await octokit.request(
-                    `GET /repos/${repository}/branches/${branch}`
-                );
-                if (!originBranch) {
-                    logger.fatal(
-                        `Deploy branch '${branch}' for repository '${repository}' not found`
-                    );
-                    process.exit(1);
-                }
-            }
-        } catch (error: any) {
-            logger.fatal(
-                `Deploy branch '${branch}' for repository '${repository}' not found`
-            );
-            process.exit(1);
-        }
-    } catch (error: any) {
-        logger.fatal(`Repository '${repository}' not found`);
-        process.exit(1);
-    }
-
-    logger.debug('Source repository validation successful');
 }
 
 async function checkSecrets(secrets: string[]) {
@@ -163,7 +116,7 @@ async function main() {
     const repo = origin
         .replace('git@', '')
         .replace('https://', '')
-        .replace('.git', '')
+        .replace('.git' + '', '')
         .replace(':', '/')
         .split('/')
         .slice(-2)
@@ -181,11 +134,6 @@ async function main() {
         .option('-v, --verbose', 'verbose output', false)
         .option('-q, --quiet', 'quiet output (overrides verbose)', false)
         .option('-k, --insecure', 'disable ssl verification', false)
-        .option(
-            '-r, --repository [repository]',
-            'github repository in <owner>/<repo> format',
-            repo
-        )
         .hook('preAction', (program, _) => {
             const isVerbose = program.opts()['verbose'];
             const isQuiet = program.opts()['quiet'];
@@ -203,7 +151,6 @@ async function main() {
         .option('-l, --literal <string>', 'worker literal', collect, [])
         .option('-v, --variable <string>', 'worker variable', collect, [])
         .action((options) => {
-            const { repository } = program.opts();
             const secretArgs = options.secret.reduce(
                 (x: { [id: string]: string }, y: string) => {
                     const ySplit = y.split(':');
@@ -237,7 +184,6 @@ async function main() {
                 },
                 {}
             );
-            checks.push(checkRepository(repository, `${branch}`, 'deploy'));
             checks.push(checkSecrets(secretArgs));
             checks.push(checkVariables(varArgs));
             Promise.all(checks).then(() => {
@@ -248,8 +194,6 @@ async function main() {
         });
 
     program.command('delete').action((_) => {
-        const { repository, environment } = program.opts();
-        checks.push(checkRepository(repository, environment, 'clean'));
         Promise.all(checks).then(async () => {
             const worker = workerName(project, `${branch}`);
             if (worker != project) {
@@ -272,3 +216,4 @@ async function main() {
 }
 
 main();
+T;
